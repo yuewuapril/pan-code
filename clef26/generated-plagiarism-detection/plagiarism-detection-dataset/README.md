@@ -41,3 +41,5 @@ If everything works, the result should look like:
 
 <img width="1341" height="205" alt="Screenshot_20260227_145626" src="https://github.com/user-attachments/assets/65b8cbb6-6977-4ae8-82f0-331ceccd57dc" />
 
+trec_eval qrels.txt -m recall.10 -m recip_rank -m ndcg_cut.10 run.txt
+
