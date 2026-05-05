@@ -61,6 +61,7 @@ tira-cli code-submission \
 	--path . \
 	--set 'watermark_command=/baseline.py watermark $inputDataset $outputDir' \
 	--set 'detect_command=/baseline.py detect $inputDataset $outputDir' \
+    --mount-hf-model 'Qwen/Qwen2.5-1.5B-Instruct' \
 	--dry-run
 ```
 
