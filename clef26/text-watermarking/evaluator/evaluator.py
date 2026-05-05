@@ -143,13 +143,15 @@ def calculate_average_twf_per_text_pair(labels, water, orig):
 @click.argument("watermarked_texts", type=Path)
 @click.argument("original_texts", type=Path)
 @click.argument("labels", type=Path)
+@click.argument("predicted_labels", type=Path)
 @click.option("--output-directory", type=Path, required=False, help="The output directory.")
-def main(watermarked_texts, original_texts, labels, output_directory):
+def main(watermarked_texts, original_texts, labels, predicted_labels, output_directory):
     orig = load_data(original_texts)
     water = load_data(watermarked_texts)
     labels = load_data(labels)
     truths = labels["truth_label"]
-    predictions = labels["label"]
+    predictions = load_data(predicted_labels)["label"]
+    labels["label"] = predictions
 
     true_positives = 0
     true_negatives = 0

@@ -19,14 +19,14 @@ tira_configs:
       name: ["pan-text-watermarking"]
   workflow:
     name: pan26-text-watermarking
-    obfuscation_image: mam10eks/pan-watermarking-prototype:obfuscator-0.0.1
+    obfuscation_image: mam10eks/pan-watermarking:obfuscator-0.0.2
     obfuscation_command: '/obfuscate.py $inputDataset/01-watermarking/*.jsonl $inputDataset/original/*.jsonl $outputDir'
   input_format:
     name: "*.jsonl"
   truth_format:
     name: "*.jsonl"
   evaluator:
-    image: mam10eks/pan-watermarking-prototype:eval-0.0.1
+    image: mam10eks/pan-watermarking:eval-0.0.1
     command: '/evaluator.py --output-directory $outputDir $inputRun/01-watermarking/*.jsonl $inputDataset/*.jsonl $inputRun/02-obfuscation/*.jsonl $inputRun/03-detection/*.jsonl'
   resolve_inputs_to: "."
   resolve_truths_to: "."
