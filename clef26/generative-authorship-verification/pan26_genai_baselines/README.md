@@ -1,6 +1,6 @@
-# PAN'25 "Voight-Kampff" Generative AI Authorship Verification Baselines
+# PAN'25/26 "Voight-Kampff" Generative AI Authorship Verification Baselines
 
-LLM detection baselines for the "Voight-Kampff" Generative AI Authorship Verification Baselines at PAN 2025.
+LLM detection baselines for the "Voight-Kampff" Generative AI Authorship Verification Baselines at PAN 2025 and PAN 2026.
 
 ## Installation
 
