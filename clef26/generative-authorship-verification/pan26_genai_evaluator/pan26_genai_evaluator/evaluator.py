@@ -286,7 +286,8 @@ def main(answer_file, truth_file, output_dir, outfile_name, skip_prototext):
         y_true, y_pred = vectorize({k: v for k, v in truth.items() if v['source'] == s}, pred)
 
         for k, v in evaluate_all(y_true, y_pred).items():
-            results[k].append(v)
+            if v is not None:
+                results[k].append(v)
 
     # Calculate macro average
     results = {k: fsum(v) / len(v) for k, v in results.items()}
