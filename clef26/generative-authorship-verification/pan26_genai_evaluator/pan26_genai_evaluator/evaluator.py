@@ -280,17 +280,8 @@ def main(answer_file, truth_file, output_dir, outfile_name, skip_prototext):
     if len(pred) > len(truth) or set(truth.keys()).union(set(pred)) != set(truth.keys()):
         raise click.UsageError('Truth file does not match answer file.')
 
-    results = defaultdict(list)
-    sources = sorted({v['source'] for v in truth.values()})
-    for s in sources:
-        y_true, y_pred = vectorize({k: v for k, v in truth.items() if v['source'] == s}, pred)
-
-        for k, v in evaluate_all(y_true, y_pred).items():
-            if v is not None:
-                results[k].append(v)
-
-    # Calculate macro average
-    results = {k: round(fsum(v) / len(v), 3) for k, v in results.items()}
+    y_true, y_pred = vectorize(truth, pred)
+    results = evaluate_all(y_true, y_pred)
 
     # Write Tira Prototext
     if not skip_prototext:
