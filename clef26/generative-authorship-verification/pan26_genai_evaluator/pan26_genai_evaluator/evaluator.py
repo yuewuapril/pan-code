@@ -290,7 +290,7 @@ def main(answer_file, truth_file, output_dir, outfile_name, skip_prototext):
                 results[k].append(v)
 
     # Calculate macro average
-    results = {k: fsum(v) / len(v) for k, v in results.items()}
+    results = {k: round(fsum(v) / len(v), 3) for k, v in results.items()}
 
     # Write Tira Prototext
     if not skip_prototext:
