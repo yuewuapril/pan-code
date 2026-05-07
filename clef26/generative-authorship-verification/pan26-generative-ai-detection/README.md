@@ -38,7 +38,7 @@ This is the configuration for Task-2@Pan on Voight-Kampff Generative AI Detectio
 Upload this to TIRA via (remove the `--dry-run` argument after a first test):
 
 ```
-tira-cli dataset-submission --path pan26-generative-ai-detection --task generative-ai-authorship-verification-panclef-2026 --split train --dry-run
+tira-cli dataset-submission --path pan26-generative-ai-detection --task generative-ai-authorship-verification-panclef-2026 --split test --dry-run
 ```
 
 If everything works, the result should look like:
