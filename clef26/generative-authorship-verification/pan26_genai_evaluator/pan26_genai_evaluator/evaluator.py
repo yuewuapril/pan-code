@@ -163,7 +163,7 @@ def confusion(y_true, y_pred):
     ----------
     Confusion matrix as array.
     """
-    return confusion_matrix(y_true, y_pred >= 0.5, labels=[0, 1]).tolist()
+    return confusion_matrix(y_true, y_pred > 0.5, labels=[0, 1]).tolist()
 
 
 def load_problem_file(file_obj):
@@ -208,6 +208,8 @@ def evaluate_all(y_true, y_pred):
 
     for k, v in results.items():
         results[k] = round(v, 3) if v is not None else v
+
+    results['confusion'] = confusion(y_true, y_pred)
 
     return results
 
