@@ -16,7 +16,9 @@ def read_solution_files(solutions_folder: str) -> dict:
     :return: dict of solution files with problem-id as key and file content as value
     """
     solutions = {}
-    for solution_file in glob.glob(os.path.join(solutions_folder, 'solution-problem-*.json')):
+    solution_files = glob.glob(os.path.join(solutions_folder, 'solution-problem-*.json'))
+    solution_files += glob.glob(f"{solutions_folder}/*/solution-problem-*.json")
+    for solution_file in solution_files:
         with open(solution_file, 'r') as fh:
             curr_solution = json.load(fh)
             solutions[os.path.basename(solution_file)[9:-5]] = curr_solution

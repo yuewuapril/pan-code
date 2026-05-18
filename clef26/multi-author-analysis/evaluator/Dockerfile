@@ -1,4 +1,4 @@
-# docker build -t mam10eks/multi-author-analysis:eval-26 .
+# docker build -t mam10eks/multi-author-analysis:eval-26.1 .
 FROM ubuntu
 
 RUN apt-get update \
