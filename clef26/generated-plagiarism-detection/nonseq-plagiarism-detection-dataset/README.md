@@ -2,11 +2,11 @@
 configs:
 - config_name: inputs
   data_files:
-  - split: train
+  - split: test
     path: ["corpus.jsonl.gz", "queries.jsonl"]
 - config_name: truths
   data_files:
-  - split: train
+  - split: test
     path: ["qrels.txt", "queries.jsonl"]
 
 tira_configs:
@@ -34,7 +34,7 @@ This is the test dataset for Task-4@Pan on Generative Plagiarism Detection.
 Upload this to TIRA via (remove the `--dry-run` argument after a first test):
 
 ```
-tira-cli dataset-submission --path nonseq-plagiarism-detection-dataset --task pan26-generated-plagiarism-detection --split train --dry-run
+tira-cli dataset-submission --path nonseq-plagiarism-detection-dataset --task pan26-generated-plagiarism-detection --split test --dry-run
 ```
 
 If everything works, the result should look like:
