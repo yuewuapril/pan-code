@@ -1,5 +1,0 @@
-transformers
-tira
-click
-numpy
-torch
